@@ -19,7 +19,7 @@ contains
     use bl_constants_module
     use eos_module, only: eos_input_rp, eos
     use eos_type_module
-    use probin_module, only : rho_1, p0_base, do_SNE, &
+    use probin_module, only : rho_1, p0_base, do_smallscale, &
                               prob_lo, grav_const
  
     use variables, only: rho_comp, rhoh_comp, temp_comp, spec_comp, trac_comp, ntrac
@@ -54,7 +54,7 @@ contains
       rloc = (dble(r) + HALF)*dr(n)
  
       d_ambient = rho_1
-      if (do_SNe) then
+      if (do_smallscale) then
          p_ambient = p0_base
       else
          p_ambient = p0_base + rho_1*grav_const*(rloc - prob_lo(size(dx)))
@@ -75,7 +75,7 @@ contains
       s0_init(r, rho_comp) = d_ambient
       s0_init(r,rhoh_comp) = d_ambient * eos_state%h
       s0_init(r,spec_comp:spec_comp+nspec-1) = d_ambient * xn_ambient(1:nspec)
-      if (do_SNe) then
+      if (do_smallscale) then
          p0_init(r) = p0_base
       else
          p0_init(r) = eos_state%p

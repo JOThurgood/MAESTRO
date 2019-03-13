@@ -2,5 +2,4 @@ rho_2                               real               2.0d0
 rho_1                               real               1.0d0
 radius                              real               0.15d0
 p0_base                             real               1.0d0
-do_SNe                              logical            .false.
 
