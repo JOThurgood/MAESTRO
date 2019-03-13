@@ -24,7 +24,7 @@
 
  ppm_type = 0
 
- max_step = 1
+ max_step = 100000
  init_iter = 1
 
  stop_time = 5.0d0
