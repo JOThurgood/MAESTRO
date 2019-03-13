@@ -13,12 +13,7 @@
  rho_1 = 1.0d0
  rho_2 = 2.0d0
 
- vel_amplitude = 0.25d0
- vel_width = 0.025d0
-
  p0_base = 5.0d0
-
- nmodes = 1
 
  anelastic_cutoff = 1.d-10
  base_cutoff_density = 1.d-10
@@ -29,7 +24,7 @@
 
  ppm_type = 0
 
- max_step = 100000
+ max_step = 1
  init_iter = 1
 
  stop_time = 5.0d0
